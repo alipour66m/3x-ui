@@ -47,7 +47,7 @@ var defaultValueMap = map[string]string{
 	"subPort":            "2096",
 	"subPath":            "/sub/",
 	"subDomain":          "",
-	"cloudDomain":        "",
+	"CloudDomain":        "",
 	"subCertFile":        "",
 	"subKeyFile":         "",
 	"subUpdates":         "12",
