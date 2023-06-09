@@ -227,7 +227,7 @@ func (s *SubService) genVmessLink(inbound *model.Inbound, email string) string {
 		}
 	}
 
-	clients, _ := s.inboundService.GetClients(inbound)
+	clients, _ := s.settingServics.GetClients(inbound)
 	clientIndex := -1
 	for i, client := range clients {
 		if client.Email == email {
