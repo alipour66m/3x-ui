@@ -88,10 +88,6 @@ func (s *Server) Start() (err error) {
 		return err
 	}
 
-    CloudDomain, err := s.settingService.GetCloudDomain()
-	if err != nil {
-		return err
-	}
 	certFile, err := s.settingService.GetSubCertFile()
 	if err != nil {
 		return err
