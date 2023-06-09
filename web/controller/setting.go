@@ -77,6 +77,7 @@ func (a *SettingController) getDefaultSettings(c *gin.Context) {
 		"subPort":     func() (interface{}, error) { return a.settingService.GetSubPort() },
 		"subPath":     func() (interface{}, error) { return a.settingService.GetSubPath() },
 		"subDomain":   func() (interface{}, error) { return a.settingService.GetSubDomain() },
+		"CloudDomain": func() (interface{}, error) { return a.settingService.GetCloudDomain() },
 		"subKeyFile":  func() (interface{}, error) { return a.settingService.GetSubKeyFile() },
 		"subCertFile": func() (interface{}, error) { return a.settingService.GetSubCertFile() },
 	}
