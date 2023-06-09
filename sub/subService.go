@@ -258,7 +258,7 @@ func (s *SubService) genVmessLink(inbound *model.Inbound, email string) string {
 }
 
 func (s *SubService) genVlessLink(inbound *model.Inbound, email string) string {
-	address := "mci.alipour.top"
+	address, _ := s.settingServics.GetCloudDomain()
 	if inbound.Protocol != model.VLESS {
 		return ""
 	}
