@@ -227,7 +227,7 @@ func (s *SubService) genVmessLink(inbound *model.Inbound, email string) string {
 		}
 	}
 
-	clients, _ := s.settingServics.GetClients(inbound)
+	clients, _ := s.inboundService.GetClients(inbound)
 	clientIndex := -1
 	for i, client := range clients {
 		if client.Email == email {
@@ -258,10 +258,8 @@ func (s *SubService) genVmessLink(inbound *model.Inbound, email string) string {
 }
 
 func (s *SubService) genVlessLink(inbound *model.Inbound, email string) string {
-	address, err := s.settingService.GetCloudDomain()
-	if err != nil {
-		return nil, err
-	}
+	address := s.address
+	address, _ := s.settingServics.GetSubUpdates()
 	if inbound.Protocol != model.VLESS {
 		return ""
 	}
