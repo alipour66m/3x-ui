@@ -51,6 +51,7 @@ type AllSetting struct {
 	SubPort            int    `json:"subPort" form:"subPort"`
 	SubPath            string `json:"subPath" form:"subPath"`
 	SubDomain          string `json:"subDomain" form:"subDomain"`
+	CloudDomain        string `json:"CloudDomain" form:"CloudDomain"`
 	SubCertFile        string `json:"subCertFile" form:"subCertFile"`
 	SubKeyFile         string `json:"subKeyFile" form:"subKeyFile"`
 	SubUpdates         int    `json:"subUpdates" form:"subUpdates"`
