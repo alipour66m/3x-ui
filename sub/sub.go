@@ -60,15 +60,6 @@ func (s *Server) initRouter() (*gin.Engine, error) {
 	if subDomain != "" {
 		engine.Use(middleware.DomainValidatorMiddleware(subDomain))
 	}
-
-    subDomain, err := s.settingService.GetSubDomain()
-	if err != nil {
-		return nil, err
-	}
-
-	if subDomain != "" {
-		engine.Use(middleware.DomainValidatorMiddleware(subDomain))
-	}
 	g := engine.Group(subPath)
 
 	s.sub = NewSUBController(g)
