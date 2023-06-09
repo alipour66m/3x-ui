@@ -61,6 +61,14 @@ func (s *Server) initRouter() (*gin.Engine, error) {
 		engine.Use(middleware.DomainValidatorMiddleware(subDomain))
 	}
 
+    subDomain, err := s.settingService.GetSubDomain()
+	if err != nil {
+		return nil, err
+	}
+
+	if subDomain != "" {
+		engine.Use(middleware.DomainValidatorMiddleware(subDomain))
+	}
 	g := engine.Group(subPath)
 
 	s.sub = NewSUBController(g)
@@ -89,6 +97,10 @@ func (s *Server) Start() (err error) {
 		return err
 	}
 
+    CloudDomain, err := s.settingService.GetCloudDomain()
+	if err != nil {
+		return err
+	}
 	certFile, err := s.settingService.GetSubCertFile()
 	if err != nil {
 		return err
