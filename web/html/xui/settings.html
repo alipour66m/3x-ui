@@ -93,7 +93,6 @@
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.panelListeningIP"}}' desc='{{ i18n "pages.settings.panelListeningIPDesc"}}' v-model="allSetting.webListen"></setting-list-item>
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.panelListeningDomain"}}' desc='{{ i18n "pages.settings.panelListeningDomainDesc"}}' v-model="allSetting.webDomain"></setting-list-item>
                                 <setting-list-item type="number" title='{{ i18n "pages.settings.panelPort"}}' desc='{{ i18n "pages.settings.panelPortDesc"}}' v-model="allSetting.webPort" :min="0"></setting-list-item>
-                                <setting-list-item type="text" title='Cloudflare domain' desc='Cloudflare domain' v-model="allSetting.CloudDomain"></setting-list-item>
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.publicKeyPath"}}' desc='{{ i18n "pages.settings.publicKeyPathDesc"}}' v-model="allSetting.webCertFile"></setting-list-item>
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.privateKeyPath"}}' desc='{{ i18n "pages.settings.privateKeyPathDesc"}}' v-model="allSetting.webKeyFile"></setting-list-item>
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.panelUrlPath"}}' desc='{{ i18n "pages.settings.panelUrlPathDesc"}}' v-model="allSetting.webBasePath"></setting-list-item>
@@ -409,6 +408,7 @@
                                 <setting-list-item type="switch" title='{{ i18n "pages.settings.subEnable"}}' desc='{{ i18n "pages.settings.subEnableDesc"}}' v-model="allSetting.subEnable"></setting-list-item>
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.subListen"}}' desc='{{ i18n "pages.settings.subListenDesc"}}' v-model="allSetting.subListen"></setting-list-item>
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.subDomain"}}' desc='{{ i18n "pages.settings.subDomainDesc"}}' v-model="allSetting.subDomain"></setting-list-item>
+                                <setting-list-item type="text" title='Cloudflare domain' desc='Cloudflare domain' v-model="allSetting.CloudDomain"></setting-list-item>
                                 <setting-list-item type="number" title='{{ i18n "pages.settings.subPort"}}' desc='{{ i18n "pages.settings.subPortDesc"}}' v-model.number="allSetting.subPort"></setting-list-item>
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.subPath"}}' desc='{{ i18n "pages.settings.subPathDesc"}}' v-model="allSetting.subPath"></setting-list-item>
                                 <setting-list-item type="text" title='{{ i18n "pages.settings.subCertPath"}}' desc='{{ i18n "pages.settings.subCertPathDesc"}}' v-model="allSetting.subCertFile"></setting-list-item>
