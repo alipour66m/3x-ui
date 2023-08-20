@@ -48,6 +48,7 @@ var defaultValueMap = map[string]string{
 	"subPort":            "2096",
 	"subPath":            "/sub/",
 	"subDomain":          "",
+	"CloudDomain":        "",
 	"subCertFile":        "",
 	"subKeyFile":         "",
 	"subUpdates":         "12",
@@ -382,6 +383,10 @@ func (s *SettingService) GetSubPath() (string, error) {
 
 func (s *SettingService) GetSubDomain() (string, error) {
 	return s.getString("subDomain")
+}
+
+func (s *SettingService) GetCloudDomain() (string, error) {
+	return s.getString("CloudDomain")
 }
 
 func (s *SettingService) GetSubCertFile() (string, error) {
