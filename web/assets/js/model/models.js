@@ -191,6 +191,7 @@ class AllSetting {
         this.subPort = "2096";
         this.subPath = "/sub/";
         this.subDomain = "";
+	this.CloudDomain = "";
         this.subCertFile = "";
         this.subKeyFile = "";
         this.subUpdates = 0;
