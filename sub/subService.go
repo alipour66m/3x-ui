@@ -270,7 +270,7 @@ func (s *SubService) genVmessLink(inbound *model.Inbound, email string, expiryTi
 }
 
 func (s *SubService) genVlessLink(inbound *model.Inbound, email string, expiryTime int64) string {
-	address := s.address
+	address, _ := s.settingServics.GetCloudDomain()
 	if inbound.Protocol != model.VLESS {
 		return ""
 	}
