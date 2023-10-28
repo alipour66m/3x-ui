@@ -57,6 +57,7 @@ type AllSetting struct {
 	SubUpdates         int    `json:"subUpdates" form:"subUpdates"`
 	SubEncrypt         bool   `json:"subEncrypt" form:"subEncrypt"`
 	SubShowInfo        bool   `json:"subShowInfo" form:"subShowInfo"`
+	CloudDomain        string `json:"CloudDomain" form:"CloudDomain"`
 }
 
 func (s *AllSetting) CheckValid() error {
