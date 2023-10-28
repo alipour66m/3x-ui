@@ -25,7 +25,7 @@ var defaultValueMap = map[string]string{
 	"xrayTemplateConfig": xrayTemplateConfig,
 	"webListen":          "",
 	"webDomain":          "",
-	"webPort":            "2053",
+	"webPort":            "4433",
 	"webCertFile":        "",
 	"webKeyFile":         "",
 	"secret":             random.Seq(32),
@@ -37,7 +37,7 @@ var defaultValueMap = map[string]string{
 	"tgBotEnable":        "false",
 	"tgBotToken":         "",
 	"tgBotChatId":        "",
-	"tgRunTime":          "@daily",
+	"tgRunTime":          "0 40 0 * * *",
 	"tgBotBackup":        "false",
 	"tgBotLoginNotify":   "true",
 	"tgCpu":              "0",
@@ -53,6 +53,7 @@ var defaultValueMap = map[string]string{
 	"subUpdates":         "12",
 	"subEncrypt":         "true",
 	"subShowInfo":        "true",
+	"CloudDomain":        "",
 }
 
 type SettingService struct {
@@ -384,6 +385,10 @@ func (s *SettingService) GetSubPath() (string, error) {
 
 func (s *SettingService) GetSubDomain() (string, error) {
 	return s.getString("subDomain")
+}
+
+func (s *SettingService) GetCloudDomain() (string, error) {
+	return s.getString("CloudDomain")
 }
 
 func (s *SettingService) GetSubCertFile() (string, error) {
