@@ -26,15 +26,18 @@ func NewSUBController(
 	rModel string,
 	update string,
 	jsonFragment string,
+	jsonMux string,
+	jsonRules string,
 ) *SUBController {
+	sub := NewSubService(showInfo, rModel)
 	a := &SUBController{
 		subPath:        subPath,
 		subJsonPath:    jsonPath,
 		subEncrypt:     encrypt,
 		updateInterval: update,
 
-		subService:     NewSubService(showInfo, rModel),
-		subJsonService: NewSubJsonService(jsonFragment),
+		subService:     sub,
+		subJsonService: NewSubJsonService(jsonFragment, jsonMux, jsonRules, sub),
 	}
 	a.initRouter(g)
 	return a

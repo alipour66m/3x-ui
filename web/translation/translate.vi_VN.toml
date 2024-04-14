@@ -311,6 +311,13 @@
 "subURIDesc" = "Thay đổi URI cơ sở của URL gói đăng ký để sử dụng cho proxy trung gian"
 "fragment" = "Sự phân mảnh"
 "fragmentDesc" = "Kích hoạt phân mảnh cho gói TLS hello"
+"fragmentSett" = "Cài đặt phân mảnh"
+"mux" = "Mux"
+"muxDesc" = "Truyền nhiều luồng dữ liệu độc lập trong luồng dữ liệu đã thiết lập."
+"muxSett" = "Mux Cài đặt"
+"direct" = "Kết nối trực tiếp"
+"directDesc" = "Trực tiếp thiết lập kết nối với tên miền hoặc dải IP của một quốc gia cụ thể."
+"directSett" = "Tùy chọn kết nối trực tiếp"
 
 [pages.xray]
 "title" = "Cài đặt Xray"
@@ -446,6 +453,10 @@
 "bridge" = "Cầu"
 "portal" = "Cổng thông tin"
 "intercon" = "Kết nối"
+"settings" = "cài đặt"
+"accountInfo" = "Thông tin tài khoản"
+"outboundStatus" = "Trạng thái đầu ra"
+"sendThrough" = "Gửi qua"
 
 [pages.xray.balancer]
 "addBalancer" = "Thêm cân bằng"
@@ -467,6 +478,8 @@
 [pages.xray.dns]
 "enable" = "Kích hoạt DNS"
 "enableDesc" = "Kích hoạt máy chủ DNS tích hợp"
+"tag" = "Thẻ gửi đến DNS"
+"tagDesc" = "Thẻ này sẽ có sẵn dưới dạng thẻ Gửi đến trong quy tắc định tuyến."
 "strategy" = "Chiến lược truy vấn"
 "strategyDesc" = "Chiến lược tổng thể để phân giải tên miền"
 "add" = "Thêm máy chủ"

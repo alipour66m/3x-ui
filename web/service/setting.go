@@ -17,6 +17,7 @@ import (
 	"x-ui/util/random"
 	"x-ui/util/reflect_util"
 	"x-ui/web/entity"
+	"x-ui/xray"
 )
 
 //go:embed config.json
@@ -61,6 +62,8 @@ var defaultValueMap = map[string]string{
 	"subJsonPath":        "/json/",
 	"subJsonURI":         "",
 	"subJsonFragment":    "",
+	"subJsonMux":         "",
+	"subJsonRules":       "",
 	"datepicker":         "gregorian",
 	"warp":               "",
 }
@@ -437,6 +440,14 @@ func (s *SettingService) GetSubJsonFragment() (string, error) {
 	return s.getString("subJsonFragment")
 }
 
+func (s *SettingService) GetSubJsonMux() (string, error) {
+	return s.getString("subJsonMux")
+}
+
+func (s *SettingService) GetSubJsonRules() (string, error) {
+	return s.getString("subJsonRules")
+}
+
 func (s *SettingService) GetDatepicker() (string, error) {
 	return s.getString("datepicker")
 }
@@ -447,6 +458,14 @@ func (s *SettingService) GetWarp() (string, error) {
 
 func (s *SettingService) SetWarp(data string) error {
 	return s.setString("warp", data)
+}
+
+func (s *SettingService) GetIpLimitEnable() (bool, error) {
+	accessLogPath, err := xray.GetAccessLogPath()
+	if err != nil {
+		return false, err
+	}
+	return (accessLogPath != "none" && accessLogPath != ""), nil
 }
 
 func (s *SettingService) UpdateAllSetting(allSetting *entity.AllSetting) error {
@@ -482,17 +501,18 @@ func (s *SettingService) GetDefaultXrayConfig() (interface{}, error) {
 func (s *SettingService) GetDefaultSettings(host string) (interface{}, error) {
 	type settingFunc func() (interface{}, error)
 	settings := map[string]settingFunc{
-		"expireDiff":  func() (interface{}, error) { return s.GetExpireDiff() },
-		"trafficDiff": func() (interface{}, error) { return s.GetTrafficDiff() },
-		"pageSize":    func() (interface{}, error) { return s.GetPageSize() },
-		"defaultCert": func() (interface{}, error) { return s.GetCertFile() },
-		"defaultKey":  func() (interface{}, error) { return s.GetKeyFile() },
-		"tgBotEnable": func() (interface{}, error) { return s.GetTgbotenabled() },
-		"subEnable":   func() (interface{}, error) { return s.GetSubEnable() },
-		"subURI":      func() (interface{}, error) { return s.GetSubURI() },
-		"subJsonURI":  func() (interface{}, error) { return s.GetSubJsonURI() },
-		"remarkModel": func() (interface{}, error) { return s.GetRemarkModel() },
-		"datepicker":  func() (interface{}, error) { return s.GetDatepicker() },
+		"expireDiff":    func() (interface{}, error) { return s.GetExpireDiff() },
+		"trafficDiff":   func() (interface{}, error) { return s.GetTrafficDiff() },
+		"pageSize":      func() (interface{}, error) { return s.GetPageSize() },
+		"defaultCert":   func() (interface{}, error) { return s.GetCertFile() },
+		"defaultKey":    func() (interface{}, error) { return s.GetKeyFile() },
+		"tgBotEnable":   func() (interface{}, error) { return s.GetTgbotenabled() },
+		"subEnable":     func() (interface{}, error) { return s.GetSubEnable() },
+		"subURI":        func() (interface{}, error) { return s.GetSubURI() },
+		"subJsonURI":    func() (interface{}, error) { return s.GetSubJsonURI() },
+		"remarkModel":   func() (interface{}, error) { return s.GetRemarkModel() },
+		"datepicker":    func() (interface{}, error) { return s.GetDatepicker() },
+		"ipLimitEnable": func() (interface{}, error) { return s.GetIpLimitEnable() },
 	}
 
 	result := make(map[string]interface{})

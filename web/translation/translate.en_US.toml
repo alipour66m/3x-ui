@@ -310,7 +310,14 @@
 "subURI" = "Reverse Proxy URI"
 "subURIDesc" = "The URI path of the subscription URL for use behind proxies."
 "fragment" = "Fragmentation"
-"fragmentDesc" = "Enable fragmentation for TLS hello packet"
+"fragmentDesc" = "Enable fragmentation for TLS hello packet."
+"fragmentSett" = "Fragmentation Settings"
+"mux" = "Mux"
+"muxDesc" = "Transmit multiple independent data streams within an established data stream."
+"muxSett" = "Mux Settings"
+"direct" = "Direct Connection"
+"directDesc" = "Directly establishes connections with domains or IP ranges of a specific country."
+"directSett" = "Direct Connection Options"
 
 [pages.xray]
 "title" = "Xray Configs"
@@ -446,6 +453,10 @@
 "bridge" = "Bridge"
 "portal" = "Portal"
 "intercon" = "Interconnection"
+"settings" = "Settings"
+"accountInfo" = "Account Information"
+"outboundStatus" = "Outbound Status"
+"sendThrough" = "Send Through"
 
 [pages.xray.balancer]
 "addBalancer" = "Add Balancer"
@@ -467,6 +478,8 @@
 [pages.xray.dns]
 "enable" = "Enable DNS"
 "enableDesc" = "Enable built-in DNS server"
+"tag" = "DNS Inbound Tag"
+"tagDesc" = "This tag will be available as an Inbound tag in routing rules."
 "strategy" = "Query Strategy"
 "strategyDesc" = "Overall strategy to resolve domain names"
 "add" = "Add Server"
