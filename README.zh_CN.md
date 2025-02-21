@@ -9,7 +9,7 @@
 
 **一个更好的面板 • 基于Xray Core构建**
 
-[![](https://img.shields.io/github/v/release/alipour66m/3x-ui.svg)](https://github.com/MHSanaei/3x-ui/releases)
+[![](https://img.shields.io/github/v/release/alipour66m/3x-ui.svg)](https://github.com/alipour66m/3x-ui/releases)
 [![](https://img.shields.io/github/actions/workflow/status/alipour66m/3x-ui/release.yml.svg)](#)
 [![GO Version](https://img.shields.io/github/go-mod/go-version/alipour66m/3x-ui.svg)](#)
 [![Downloads](https://img.shields.io/github/downloads/alipour66m/3x-ui/total.svg)](#)
@@ -116,7 +116,7 @@ case "${ARCH}" in
 esac
 
 
-wget https://github.com/MHSanaei/3x-ui/releases/latest/download/x-ui-linux-${XUI_ARCH}.tar.gz
+wget https://github.com/alipour66m/3x-ui/releases/latest/download/x-ui-linux-${XUI_ARCH}.tar.gz
 ```
 
 2. 下载压缩包后，执行以下命令安装或升级 x-ui：
@@ -163,7 +163,7 @@ systemctl restart x-ui
 2. 克隆仓库：
 
    ```sh
-   git clone https://github.com/MHSanaei/3x-ui.git
+   git clone https://github.com/alipour66m/3x-ui.git
    cd 3x-ui
    ```
 
@@ -584,4 +584,4 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 
 ## Star趋势
 
-[![Stargazers over time](https://starchart.cc/MHSanaei/3x-ui.svg?variant=adaptive)](https://starchart.cc/MHSanaei/3x-ui)
+[![Stargazers over time](https://starchart.cc/alipour66m/3x-ui.svg?variant=adaptive)](https://starchart.cc/alipour66m/3x-ui)
