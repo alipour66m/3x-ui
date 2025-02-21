@@ -554,7 +554,7 @@ class TlsStreamSettings extends XrayCommonClass {
         maxVersion = TLS_VERSION_OPTION.TLS13,
         cipherSuites = '',
         rejectUnknownSni = false,
-        verifyPeerCertInNames = 'dns.google',
+        verifyPeerCertInNames = ['dns.google'],
         disableSystemRoot = false,
         enableSessionResumption = false,
         certificates = [new TlsStreamSettings.Cert()],
