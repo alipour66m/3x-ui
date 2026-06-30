@@ -10,12 +10,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/uuid"
 	"github.com/alipour66m/3x-ui/v2/database"
 	"github.com/alipour66m/3x-ui/v2/database/model"
 	"github.com/alipour66m/3x-ui/v2/logger"
 	"github.com/alipour66m/3x-ui/v2/util/common"
 	"github.com/alipour66m/3x-ui/v2/xray"
+	"github.com/google/uuid"
 
 	"gorm.io/gorm"
 )
