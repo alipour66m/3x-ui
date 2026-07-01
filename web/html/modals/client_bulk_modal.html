@@ -209,6 +209,10 @@
             this.flow = "";
             this.dbInbound = new DBInbound(dbInbound);
             this.inbound = Inbound.fromJson(dbInbound.toInbound().toJson());
+            // Smart default: preselect xtls-rprx-vision for TCP+TLS/REALITY inbounds
+            if (this.inbound.canEnableTlsFlow()) {
+                this.flow = TLS_FLOW_CONTROL.VISION;
+            }
             this.delayedStart = false;
             this.reset = 0;
         },

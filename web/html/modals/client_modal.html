@@ -76,8 +76,14 @@
             switch (inbound.protocol) {
                 case Protocols.VMESS:
                     return clients.push(new Inbound.VmessSettings.VMESS());
-                case Protocols.VLESS:
-                    return clients.push(new Inbound.VLESSSettings.VLESS());
+                case Protocols.VLESS: {
+                    const vlessClient = new Inbound.VLESSSettings.VLESS();
+                    // Smart default: auto-select xtls-rprx-vision only for TCP+TLS/REALITY inbounds
+                    if (inbound.canEnableTlsFlow()) {
+                        vlessClient.flow = TLS_FLOW_CONTROL.VISION;
+                    }
+                    return clients.push(vlessClient);
+                }
                 case Protocols.TROJAN:
                     return clients.push(new Inbound.TrojanSettings.Trojan());
                 case Protocols.SHADOWSOCKS:
